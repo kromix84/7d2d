@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  7d2d:
+    image: kromix/7d2d
+    container_name: 7d2d
+    volumes:
+      - data:/home/steam/server/
+      - save:/root/.local/share/7DaysToDie/Saves/
+    ports:
+      - 8090:8080
+      - 8091:8081
+      - 26900-26902:26900-26902/udp
+      - 26900:26900/tcp
+    restart: unless-stopped
+
+volumes:
+  data:
+  save:
