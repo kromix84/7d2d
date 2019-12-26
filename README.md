@@ -17,7 +17,9 @@ Volumes are mapped in the docker-compose file for permanence to allow server reb
 3) Large Maps have difficulties in creation and might give an "Aborted (Core Dumped)" error with no other information.
 	In order to generate a world follow the following link or see below:
 	https://7daystodie.com/forums/showthread.php?114207-Tool-NITROGEN-a-random-world-generator-for-7DtD
+		
 		**NOTE, I'm using Windows to generate the map then transfering to linux server via WinSCP**
+		
 	a) Download NitroGen World Generator from link above
 	b) Download and install Java 64-bit from Java (will not limit RAM usage during generation as oposed of Java 32-Bit)
 	c) Generate map using the NitroGen tool, note the save location for the map. ( example: C:\NitroGen_WorldGenerator\output\NewWorld)
