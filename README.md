@@ -39,16 +39,14 @@ Volumes are mapped in the docker-compose file for permanence to allow server reb
 5.  Restart the docker container using "docker-compose up -d".
 
 > #### Scheduling Server Reboots
-> This game seems to require server reboots to maintain stability, in order to perform proper reboots without crashing the server, you must issue the shutdown command to the game itself via telnet, as the shutdown command closes out the process, the container will go down, but as we have an "unless-stopped" on Reboot in the YAML file, the container will auto restart, as *it wasn't stopped* by docker . There are 4 ways of achieving this:
->  1. Manually via in-game console
->  -- Press ` in game and type *shutdown*.
->  2. Manually via Web Console
->  -- go to https://172.30.0.1:8080 (*configured in YAML file*) from a computer in the local network and type *shutdown*.
->  3. Manually via Telnet (ensure telnet is installed in the host attempting the connection)
->  -- From a computer in the local network (or host) type **telnet 172.30.0.1 8081**, then type in telnet password (from serverconfig.xml) when asked, then issue the command **shutdown**
->  4. Automatically via a scheduler (Linux will need **expect** installed *apt-get install expect*) 
->  -- Copy the shtdwn.sh script to your *docker-container.yml* folder.
-> -- Edit crontab to reboot the 7d2d server (sudo crontab -e)
+> This game seems to require server reboots to maintain stability, in order to perform proper reboots without crashing the server, you must issue the shutdown command to the game itself via telnet, as the shutdown command closes out the process, the container will go down, but as we have an "unless-stopped" on Reboot in the YAML file, the container will auto restart, as *it wasn't stopped* by docker . There are 3 ways of achieving this:
+>  1. Manually via Web Console
+>>    - go to https://172.30.0.1:8080 (*configured in YAML file*) from a computer in the local network and type *shutdown*.
+>  2. Manually via Telnet (ensure telnet is installed in the host attempting the connection)
+>>    - From a computer in the local network (or host) type **telnet 172.30.0.1 8081**, then type in telnet password (from serverconfig.xml) when asked, then issue the command **shutdown**
+>  3. Automatically via a scheduler (Linux will need **expect** installed *apt-get install expect*) 
+>>    - Copy the shtdwn.sh script to your *docker-container.yml* folder (example: */opt/7d2d/*).
+>>    - Edit crontab to reboot the 7d2d server (sudo crontab -e)
 >~~~~
 > # This Reboots the 7d2d server and container daily at 4AM
 > # Modify the command path to target the actual location of the script
