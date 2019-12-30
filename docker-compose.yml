@@ -6,7 +6,7 @@ services:
     container_name: 7d2d
     volumes:
       - data:/home/steam/server/
-      - world:/root/.local/share/7DaysToDie/Saves/
+      - save:/root/.local/share/7DaysToDie/Saves/
     networks:
       7d2d:
         ipv4_address: 172.30.0.2
@@ -19,7 +19,7 @@ services:
 
 volumes:
   data:
-  world:
+  save:
 
 networks:
   7d2d:
