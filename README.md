@@ -8,7 +8,7 @@ Volumes are mapped in the docker-compose file for permanence to allow server reb
 
 1. Run the container the first time to load all the files in the Host from the Container, then Down the container after it starts.
 	-  copy docker-compose.yml to the host server (example: */opt/7d2d/*, then run it using "docker-compose up -d"
-	- check the output logs of the 7d2d server with the command:
+	- check the output logs of the 7d2d server with the command:  
 	`tail +1f ./docker/volumes/7d2d_data/_data/output.log`
 	- Once server is loaded, down it using the command "docker-compose down"
 2. Modify the serverconfig.xml and serveradmin.xml as needed, the path to each are as follows, from the Docker install path:
@@ -22,11 +22,11 @@ Volumes are mapped in the docker-compose file for permanence to allow server reb
 
 	- Download NitroGen World Generator from link above
 	- Download and install Java 64-bit from Java (will not limit RAM usage during generation as oposed of Java 32-Bit)
-	- Generate map using the NitroGen tool, note the save location for the map. 
+	- Generate map using the NitroGen tool, note the save location for the map.  
 	   (example: C:\NitroGen_WorldGenerator\output\NewWorld)
-	- Copy the *NewWorld* folder from the output folder in NitroGen to 
+	- Copy the *NewWorld* folder from the output folder in NitroGen to   
 	./docker/volumes/7d2d_data/_data/Data/Worlds/
-	- The final path should be:
+	- The final path should be:  
 		./docker/volumes/7d2d_data/_data/Data/Worlds/*NewWorld*/*AllTheWorldDataInHere*
 
 4. Modify the values in **serverconfig.xml**  located in **.docker/volumes/7d2d_data/_data/**
