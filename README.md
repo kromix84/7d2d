@@ -8,7 +8,8 @@ Volumes are mapped in the docker-compose file for permanence to allow server reb
 
 1. Run the container the first time to load all the files in the Host from the Container, then Down the container after it starts.
 	-  copy docker-compose.yml to the host server (example: */opt/7d2d/*, then run it using "docker-compose up -d"
-	- check the output logs of the 7d2d server with the command " tail +1f ./docker/volumes/7d2d_data/_data/output.log"
+	- check the output logs of the 7d2d server with the command:
+	`tail +1f ./docker/volumes/7d2d_data/_data/output.log`
 	- Once server is loaded, down it using the command "docker-compose down"
 2. Modify the serverconfig.xml and serveradmin.xml as needed, the path to each are as follows, from the Docker install path:
 	- ./docker/volumes/7d2d_data/_data/serverconfig.xml
